@@ -1,3 +1,10 @@
+#![no_std]
+
+use core::cfg;
+
+#[cfg(feature = "alloc")]
+use alloc::string::ToString;
+
 #[derive(Debug, PartialEq)]
 pub enum BuildModel {
     Debug,
@@ -11,6 +18,7 @@ pub fn build_channel() -> BuildModel {
     BuildModel::Release
 }
 
+#[cfg(feature = "alloc")]
 impl ToString for BuildModel {
     fn to_string(&self) -> String {
         match self {
