@@ -6,7 +6,7 @@ use core::cfg;
 extern crate alloc;
 
 #[cfg(feature = "alloc")]
-use alloc::string::ToString;
+use alloc::string::{String, ToString};
 
 #[derive(Debug, PartialEq)]
 pub enum BuildModel {
