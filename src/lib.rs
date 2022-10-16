@@ -3,6 +3,9 @@
 use core::cfg;
 
 #[cfg(feature = "alloc")]
+extern crate alloc;
+
+#[cfg(feature = "alloc")]
 use alloc::string::ToString;
 
 #[derive(Debug, PartialEq)]
